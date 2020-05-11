@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My cart</title>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/cart.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="frameMenu">
+            <div class="logo">
+                <a href="index.html"><img src="images/lg.png" alt=""></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="#">Điện thoại</a>
+                        <ul>
+                            <li><a href="#">Apple</a></li>
+                            <li><a href="#">Samsung</a></li>
+                            <li><a href="#">Xiaomi</a></li>
+                            <li><a href="#">Oppo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Laptop</a>
+                        <ul>
+                            <li><a href="#">Lenovo</a></li>
+                            <li><a href="#">Dell</a></li>
+                            <li><a href="#">Macbook</a></li>
+                            <li><a href="#">Asus</a></li>
+                            <li><a href="#">MSI</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Phụ kiện</a>
+                        <ul>
+                            <li><a href="#">Tai nghe</a></li>
+                            <li><a href="#">Loa</a></li>
+                            <li><a href="#">Bàn phím</a></li>
+                            <li><a href="#">Chuột máy tính</a></li>
+                            <li><a href="#">Bàn phím</a></li>
+                            <li><a href="#">Chuột máy tính</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Thông tin</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="account">
+                <div class="login">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </div>
+                <div class="cart">
+                    <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
+                    <p class="cart-number"></p>
+                </div>
+            </div>
+        </div>
+        <div class="slider">
+            <div class="slider-item">
+                <button>Mua ngay</button>
+                <p>Smart Phone<br> GIÁ CỰC HẤP DẪN</p>
+                <img src="images/Slider/sl1.png" alt="">
+            </div>
+            <div class="slider-item">
+                <button>Liên Hệ</button>
+                <p>Dịch vụ <br>UY TÍN - CHẤT LƯỢNG</p>
+                <img src="images/Slider/sl2.png" alt="">
+            </div>
+            <div class="slider-item">
+                <button>Mua ngay</button>
+                <p>DI ĐỘNG <br> PHỤ KIỆN</p>
+                <img src="images/Slider/sl3.png" alt="">
+            </div>
+            <div class="slider-item">
+                <button>Khám Phá</button>
+                <p>Bạn tìm<br>SẢN PHẨM MỚI?</p>
+                <img src="images/Slider/sl4.png" alt="">
+            </div>
+            <div class="slider-bnt">
+                <span onclick="priveView()" id="btn-prev"><i class="fas fa-chevron-left"></i></span>
+                <span onclick="nextView()" id="btn-next"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="slider-bn2">
+                <span onclick="changeIndex(0)" class="btn-change" id="index0"><i class="far fa-circle"></i></span>
+                <span onclick="changeIndex(1)" class="btn-change" id="index1"><i class="far fa-circle"></i></span>
+                <span onclick="changeIndex(2)" class="btn-change" id="index2"><i class="far fa-circle"></i></span>
+                <span onclick="changeIndex(3)" class="btn-change" id="index3"><i class="far fa-circle"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="all-frame">
+            <div class="khung-chua-my-card">
+                <div class="header-my-cart">
+                    Giỏ hàng của tôi
+                </div>
+                <div id="my-cart">
+
+                </div>
+            </div>
+
+            <div class="check-out">
+                <div class="header-my-cart">
+                    Thông tin mua hàng
+                </div>
+                <div class="dien-thong-tin">
+                    <div class="frame-input">
+                        <i class="fas fa-user"></i>
+                        <input notEmpty type="text" placeholder="Nhập họ và tên" id="user">
+                        <label for="user" class="error"></label>
+                    </div>
+                    <div class="frame-input">
+                        <i class="fas fa-phone-alt"></i>
+                        <input notEmpty regexPhoneNumber type="text" placeholder="Số Điện Thoại" id="phone-number">
+                        <label for="phone-number" class="error"></label>
+                    </div>
+                    <div class="frame-input">
+                        <i class="fas fa-envelope"></i>
+                        <input notEmpty regexEmail type="email" placeholder="Email" id="email">
+                        <label for="email" class="error"></label>
+                    </div>
+                    <div class="frame-input">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input notEmpty type="text" placeholder="Địa chỉ nhận hàng" id="address">
+                        <label for="address" class="error"></label>
+                    </div>
+                    <div class="tinhTien" id="tinhTien1">
+                    </div>
+
+                    <div class="xac-nhan-don-hang">
+                        <button class="bnt" onclick="onclickRegister()">Xác Nhận Đơn Hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="left">
+                Hãy là người đầu tiên biết về Ưu đãi và Ưu đãi đặc biệt !!
+            </div>
+            <div class="right">
+                <input type="text" placeholder="Nhập địa chỉ email">
+                <button type="submit">Đăng kí</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="left">
+                <h2>Liên lạc với tôi</h2>
+                <ul>
+                    <li>Vương Ngọc Kim</li>
+                    <li>0123456789</li>
+                    <li>kimvnpk01572@fpt.edu.vn</li>
+                    <li>27 Nguyễn Tất Thành</li>
+                    <li>TP. Buôn Mê Thuột</li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#">Tất cả sản phẩm</a></li>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Phụ kiện</a></li>
+                    <li><a href="#">Thông tin</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Mua và trả hàng</a></li>
+                    <li><a href="#">Chính sách lưu trữ</a></li>
+                    <li><a href="#">Thanh toán</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="js/sanPham.js"></script>
+<script src="js/gioHang.js"></script>
+<script src="js/item.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/formvalidation.js"></script>
+<script>showItems();</script>
+
+</html>

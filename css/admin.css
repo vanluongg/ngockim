@@ -1,0 +1,108 @@
+.model-edit {
+    width: 500px;
+    height: 600px;
+    position: fixed;
+    top: 25px;
+    left: 400px;
+    background-color: white;
+    box-shadow: 0px 0px 10px black;
+    z-index: 6;
+    display: none;
+}
+
+.model-edit input{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 40px;
+    margin-top: 10px;
+    padding-left: 10px;
+    border-radius: 0px 10px 0px 10px;
+    background: none;
+    outline: none;
+    font-weight: bold;
+    border: 1px solid gray;
+    box-shadow: 0px 4px rgb(10, 10, 10, 0.4);
+}
+
+.model-edit .frame-product-all {
+    margin-top: -20px;
+    margin-bottom: 35px;
+    margin-left: -80px;
+}
+
+.model-edit .bnt-edit {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.model-edit .bnt-edit button {
+    display: block;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-radius: 0 20px;
+    border: 1px solid gray;
+    box-shadow: 0 5px rgb(10, 10, 10, 0.4);
+}
+
+.model-edit .bnt-edit button:hover {
+    background-color: #FFA07A;
+}
+
+.account .cart {
+    display: none;
+}
+
+.account button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.account .add-product i {
+    font-size: 30px;  
+}
+
+#model-add {
+    width: 500px;
+    height: 600px;
+    position: fixed;
+    top: 25px;
+    left: 400px;
+    background-color: white;
+    box-shadow: 0px 0px 10px black;
+    z-index: 6;
+    display: none;
+}
+.selectType select{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 290px;
+    right: 50px;
+    background-color: rgb(24, 22, 22, 0.2);
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.error{
+    margin-top: -20px;
+    font-size: 12px;
+    height: 14px;
+    width: 85%;
+    color: red;
+    font-style: italic;
+    font-weight: 600;
+    float: left;
+    text-align: right;
+}
+.model-edit .hinhAnhSanPham{
+    background-image: url(../images/errrorimg.png);
+    background-size: 100% 100%;
+}

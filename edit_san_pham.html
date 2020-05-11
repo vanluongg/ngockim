@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ADMIN</title>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+    <div class="model-edit" id="model-edit">
+
+    </div>
+    <div class="model-edit" id="model-add">
+        <div class="showTemplateProduct">
+            <div class="frame-product-all">
+                <div class="khungSanPham">
+                    <div class="hinhAnhSanPham">
+                        <img id="0" src="" alt="">
+                    </div>
+                    <h3 class="tenSanPham" id="1"></h3>
+                    <p class="giaSauKhiGiam" id="2"></p>
+                    <div class="phanTramGiam" id="3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bnt-edit">
+            <button onclick="cancelAddProduct()">Hủy Thêm</button>
+            <button onclick="addNewProduct()">Thêm sản phẩm</button>
+        </div>
+        <div class="selectType">
+            <select id="typeProduct">
+                <option value="phone" selected>Phone</option>
+                <option value="laptop">Laptop</option>
+                <option value="support">Support</option>
+            </select>
+        </div>
+
+        <input notEmpty type="text" placeholder="Link hình ảnh" onchange="showModel()" id="img">
+        <label for="img" class="error"></label>
+        <input notEmpty type="text" placeholder="Tên sản phẩm" oninput="showModel()" id="name">
+        <label for="name" class="error"></label>
+        <input notEmpty type="number" placeholder="Giá gốc" oninput="showModel()" id="gg">
+        <label for="gg" class="error"></label>
+        <input notEmpty type="number" placeholder="Phần trăm giảm giá" oninput="showModel()" id="sale">
+        <label for="sale" class="error"></label>
+        <input notEmpty type="text" placeholder="Khu vực bán" id="pl">
+        <label for="pl" class="error"></label>
+    </div>
+    <header>
+        <div class="frameMenu">
+            <div class="logo">
+                <a href="index.html"><img src="images/lg.png" alt=""></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="#">Điện thoại</a>
+                        <ul>
+                            <li><a href="#">Apple</a></li>
+                            <li><a href="#">Samsung</a></li>
+                            <li><a href="#">Xiaomi</a></li>
+                            <li><a href="#">Oppo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Laptop</a>
+                        <ul>
+                            <li><a href="#">Lenovo</a></li>
+                            <li><a href="#">Dell</a></li>
+                            <li><a href="#">Macbook</a></li>
+                            <li><a href="#">Asus</a></li>
+                            <li><a href="#">MSI</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Phụ kiện</a>
+                        <ul>
+                            <li><a href="#">Tai nghe</a></li>
+                            <li><a href="#">Loa</a></li>
+                            <li><a href="#">Bàn phím</a></li>
+                            <li><a href="#">Chuột máy tính</a></li>
+                            <li><a href="#">Bàn phím</a></li>
+                            <li><a href="#">Chuột máy tính</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Thông tin</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="account">
+                <div class="login">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </div>
+                <div class="cart">
+                    <a href="cart.html"><i class="fas fa-cart-plus"></i></a>
+                    <p class="cart-number"></p>
+                </div>
+                <div class="add-product">
+                    <button onclick="addProduct()"><i class="fas fa-edit"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="slider">
+            <div class="slider-item">
+                <button>Mua ngay</button>
+                <p>Smart Phone<br> GIÁ CỰC HẤP DẪN</p>
+                <img src="images/Slider/sl1.png" alt="">
+            </div>
+            <div class="slider-item">
+                <button>Liên Hệ</button>
+                <p>Dịch vụ <br>UY TÍN - CHẤT LƯỢNG</p>
+                <img src="images/Slider/sl2.png" alt="">
+            </div>
+            <div class="slider-item">
+                <button>Mua ngay</button>
+                <p>DI ĐỘNG <br> PHỤ KIỆN</p>
+                <img src="images/Slider/sl3.png" alt="">
+            </div>
+            <div class="slider-item">
+                <button>Khám Phá</button>
+                <p>Bạn tìm<br>SẢN PHẨM MỚI?</p>
+                <img src="images/Slider/sl4.png" alt="">
+            </div>
+            <div class="slider-bnt">
+                <span onclick="priveView()" id="btn-prev"><i class="fas fa-chevron-left"></i></span>
+                <span onclick="nextView()" id="btn-next"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="slider-bn2">
+                <span onclick="changeIndex(0)" class="btn-change" id="index0"><i class="far fa-circle"></i></span>
+                <span onclick="changeIndex(1)" class="btn-change" id="index1"><i class="far fa-circle"></i></span>
+                <span onclick="changeIndex(2)" class="btn-change" id="index2"><i class="far fa-circle"></i></span>
+                <span onclick="changeIndex(3)" class="btn-change" id="index3"><i class="far fa-circle"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="product">
+            <div class="header-product">
+                <div class="content-header">
+                    <a href="#">
+                        <h1>Điện thoại</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="frame-product-all" id="show-phone">
+
+            </div>
+            <div class="load-more" onclick="loadMore('show-phone','phone')">
+                xem thêm
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="header-product">
+                <div class="content-header">
+                    <a href="#">
+                        <h1>Laptop</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="frame-product-all" id="show-laptop">
+
+            </div>
+            <div class="load-more" onclick="loadMore('show-laptop','laptop')">
+                xem thêm
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="header-product">
+                <div class="content-header">
+                    <a href="#">
+                        <h1>phụ kiện</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="frame-product-all" id="show-support">
+
+            </div>
+            <div class="load-more" onclick="loadMore('show-support','support')">
+                xem thêm
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="left">
+                Hãy là người đầu tiên biết về Ưu đãi và Ưu đãi đặc biệt !!
+            </div>
+            <div class="right">
+                <input type="text" placeholder="Nhập địa chỉ email">
+                <button type="submit">Đăng kí</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="left">
+                <h2>Liên lạc với tôi</h2>
+                <ul>
+                    <li>Vương Ngọc Kim</li>
+                    <li>0123456789</li>
+                    <li>kimvnpk01572@fpt.edu.vn</li>
+                    <li>27 Nguyễn Tất Thành</li>
+                    <li>TP. Buôn Mê Thuột</li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#">Tất cả sản phẩm</a></li>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Phụ kiện</a></li>
+                    <li><a href="#">Thông tin</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Mua và trả hàng</a></li>
+                    <li><a href="#">Chính sách lưu trữ</a></li>
+                    <li><a href="#">Thanh toán</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="js/item.js"></script>
+<script src="js/sanPham.js"></script>
+<script src="js/gioHang.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/admin.js"></script>
+<script>start(); changeAddCartToEdit()</script>
+<script src="js/formvalidation.js"></script>
+</html>
